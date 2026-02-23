@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 7%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 7%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 7%;
+    --primary: 0 0% 10%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 30 14% 40%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 30 6% 98%;
+    --muted-foreground: 0 0% 40%;
+    --accent: 30 25% 40%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 30 25% 40%;
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a1a1a1;
+}
+
+/* Smooth animations */
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Typography enhancements */
+.prose h2 {
+  @apply font-serif text-2xl text-[#1A1A1A] mt-8 mb-4;
+}
+
+.prose h3 {
+  @apply font-serif text-xl text-[#1A1A1A] mt-6 mb-3;
+}
+
+.prose p {
+  @apply text-[#666666] leading-relaxed mb-4;
+}
+
+.prose ul, .prose ol {
+  @apply text-[#666666] mb-4 pl-6;
+}
+
+.prose li {
+  @apply mb-2;
+}
+
+.prose a {
+  @apply text-[#7C6A4F] hover:underline;
+}
+
+.prose strong {
+  @apply text-[#1A1A1A] font-semibold;
+}
+
+/* Form enhancements */
+input:focus, textarea:focus, select:focus {
+  @apply ring-2 ring-[#7C6A4F] ring-opacity-20 border-[#7C6A4F];
+}
+
+/* Button hover states */
+.btn-hover-lift {
+  @apply transition-all duration-300;
+}
+
+.btn-hover-lift:hover {
+  @apply -translate-y-0.5 shadow-lg;
+}
